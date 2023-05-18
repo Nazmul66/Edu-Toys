@@ -16,12 +16,12 @@ a{
     color: white;
     background-color: #DB915E;
 }
-h1,h3{
+h1,h3,h5{
     font-family: 'Inter', sans-serif;
 }
 h2,h4{
     font-family: 'Nunito', sans-serif;
 }
-h5{
+h6{
     font-family: 'Jost', sans-serif;
 }
