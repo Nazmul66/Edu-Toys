@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsGoogle } from 'react-icons/bs';
 import formImg from '../../../assets/all_image/form.jpg'
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { updateProfile } from 'firebase/auth';
 const RegisterPage = () => {
     const { user, createUser } = useContext(AuthContexts);
     const navigate = useNavigate();
+    const [errors, setErrors] = useState("");
     // console.log(user) 
 
     const handleRegister = (event) =>{
@@ -16,8 +17,24 @@ const RegisterPage = () => {
         const Email       = event.target.email.value;
         const Password    = event.target.password.value;
         const Photo       = event.target.photo.value;
-        const allFormDetails = {Name, Email, Password, Photo}
+        const allFormDetails = { Name, Email, Password, Photo }
         console.log(allFormDetails)
+
+        if(Email === "" || Password === "" || Name === "" || Photo === ""){
+            return setErrors("!!! Please fill Up Empty Form Box !!!");
+         }
+         else if(Password.length < 6){
+            return setErrors("!!! AtLeast use 6 Character Password !!!");
+         }
+         else if(!/(?=.*?[A-Z])/.test(Password)){
+             return setErrors("!!! AtLeast use One UpperCase !!!");
+         }
+         else if(!/(?=.*[0-9])/.test(Password)){
+            return setErrors("!!! AtLeast use One Number !!!");
+        }
+         else if(!/(?=[^#?!@$%^&*\n-])/.test(Password)){
+            return setErrors("!!! AtLeast use One Special Character !!!");
+        }
 
         // create user details info
         createUser(Email, Password)
@@ -28,7 +45,7 @@ const RegisterPage = () => {
             navigate("/login");
         })
         .catch(error =>{
-            console.log(error.message)
+            setErrors(error.message)
         })
 
     }
@@ -39,10 +56,10 @@ const RegisterPage = () => {
             photoURL: photo
          })
          .then(() =>{
-            console.log("updated");
+            console.log("updated Profile");
          })
          .catch(error =>{
-            console.log(error.message);
+            setErrors(error.message);
          })
     }
 
@@ -69,6 +86,8 @@ const RegisterPage = () => {
                     <div className='mb-7'>
                         <input type="text" name="photo" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Photo url' />
                     </div>
+
+                    <p className='text-[15px] text-red-600 font-bold text-center mb-4'>{errors}</p>
 
                     <button className='block w-full font-semibold text-white py-3 bg-[#4686ff] rounded-md '>Register</button>
 

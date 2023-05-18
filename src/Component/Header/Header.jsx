@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
 import logo from '../../assets/all_image/logo.png';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { RxCross2 } from 'react-icons/rx';
+import { AuthContexts } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user, signOutUser} = useContext(AuthContexts);
     const [toggle, setToggle] = useState(false);
+
+    const handleLogOut = () =>{
+        signOutUser()
+        .then(() =>{
+            console.log("Successful LogOut")
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
+    }
 
     return (
         <header className='py-5 lg:px-0 px-5'>
@@ -22,13 +34,31 @@ const Header = () => {
                                 <li><Link to="/">Home</Link></li>
                                 <li><Link to="/blog">Blog</Link></li>
                                 <li><Link to="/AllToy">All Toys</Link></li>
+                                {
+                                   user &&  
+                                   <>
+                                     <li><Link to="/AddToy">Add Toy</Link></li>
+                                     <li><Link to="/MyToys">My Toys</Link></li>
+                                   </>
+                                }
                             </ul>
                         </div>
 
                         <div className='formbar'>
                                 <ul className='flex lg:flex-row flex-col items-center'>
-                                    <li><Link to="/login">Login</Link></li>
-                                    <li><Link to="/register">Sign Up</Link></li>
+                                    {user ? 
+                                       <>
+                                          <li>
+                                              <img src={user?.photoURL} title={user?.displayName} alt="" className='w-[50px] rounded-full cursor-pointer' />
+                                          </li>
+                                          <li><Link onClick={ handleLogOut }>Log Out</Link></li> 
+                                       </>
+                                       :
+                                        <>
+                                            <li><Link to="/login">Login</Link></li>
+                                            <li><Link to="/register">Sign Up</Link></li>
+                                        </>
+                                    }
                                 </ul>
                         </div>
                     </nav>
