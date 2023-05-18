@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import './AddToys.css'
+import { AuthContexts } from '../../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
+    const { user } = useContext(AuthContexts);
 
     const handleAdd = (event) =>{
         event.preventDefault();
         const form         = event.target;
-        const Name         = form.name.value;
+        const ProductName  = form.name.value;
         const seller_Name  = form.seller_name.value;
         const Email        = form.email.value;
         const Category     = form.category.value;
@@ -18,33 +22,55 @@ const AddToys = () => {
         if(Rating > 5){
          return alert("star rating highest star add 5");
         }
-
-        const allData = {Name, seller_Name, Email, Category, Price, Rating, Quantity, Photo, Describe}
+        const allData = {ProductName, seller_Name, Email, Category, Price, Rating, Quantity, Photo, Describe}
         console.log(allData)
+        event.target.reset();
+
+        // backend Post data
+        fetch("http://localhost:3000/addToy",{
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(allData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'success',
+                    title: 'Your toy Product has been added',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+            }
+        })
     }
     return (
-        <div className='py-20 px-5'>
+        <div className='py-20 px-5 addtoy'>
             <div className='max-w-[1000px] mx-auto'>
-                <div className='bg-[#f9f2fa] rounded-lg text-[36px] text-center py-7 mb-24 font-bold text-[#353A3c]'>
+                <div className='bg-[#f9f2fac4] rounded-lg text-[36px] text-center py-7 mb-24 font-bold text-[#353A3c]'>
                     <h2>Online Add Toy</h2>
                 </div>
 
                <form onSubmit={ handleAdd }>
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
                       <div className="lg:w-1/2 w-full">
-                        <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Name</label>
+                        <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Toy Name</label>
                           <input type="text" name="name" placeholder="Name" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Seller Name</label>
-                          <input type="text" name="seller_name" placeholder="Seller Name" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
+                          <input type="text" name="seller_name" value={user?.displayName} placeholder="Seller Name" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
                    </div>
 
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
                       <div className="lg:w-1/2 w-full">
                         <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Seller Email</label>
-                          <input type="email" name="email" placeholder="Seller Email Address" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
+                          <input type="email" name="email" value={user?.email} placeholder="Seller Email Address" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Sub-Category</label>
@@ -70,7 +96,7 @@ const AddToys = () => {
                       </div>
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Picture URL</label>
-                          <input type="text" name="photo" placeholder="Rating" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
+                          <input type="text" name="photo" placeholder="Picture URL" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
                    </div>   
 

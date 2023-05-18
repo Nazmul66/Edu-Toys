@@ -6,6 +6,8 @@ import LoginPage from "../Component/Pages/LoginPage/LoginPage";
 import MainForm from "../Layout/MainForm";
 import RegisterPage from "../Component/Pages/RegisterPage/RegisterPage";
 import AddToys from "../Component/Shared/AddToys/AddToys";
+import MyToy from "../Component/Shared/MyToy/MyToy";
+import AllToys from "../Component/Shared/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
         {
           path: '/AddToy',
           element: <AddToys></AddToys>
+        },
+        {
+          path:'/AllToy',
+          element: <AllToys></AllToys>
+        },
+        {
+          path:'/MyToys',
+          element: <MyToy></MyToy>
         }
       ]
     },
