@@ -6,8 +6,8 @@
 
 *{
     font-family: 'Inter', sans-serif;
-    /* font-family: 'Jost', sans-serif;
-    font-family: 'Nunito', sans-serif; */
+    margin: 0;
+    padding: 0;
 }
 a{
     text-decoration: none;
@@ -15,4 +15,13 @@ a{
 *::selection{
     color: white;
     background-color: #DB915E;
+}
+h1,h3{
+    font-family: 'Inter', sans-serif;
+}
+h2,h4{
+    font-family: 'Nunito', sans-serif;
+}
+h5{
+    font-family: 'Jost', sans-serif;
 }

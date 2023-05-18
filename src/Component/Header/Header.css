@@ -1,0 +1,81 @@
+.logoImg{
+    width: 180px;
+    display: block;
+}
+.menubar ul li a{
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    color: #667085;
+    margin-right: 35px; 
+}
+.menubar ul li a::before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 3px;
+    bottom: -6px;
+    right: 0;
+    background-color: #DB915E;
+    transition: all 0.3s ease-in-out;
+}
+.menubar ul li a:hover::before{
+    left: 0;
+    width: 100%;
+}
+.formbar ul li a{
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    color: #667085;
+    margin-left: 35px; 
+}
+.formbar ul li a::before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 3px;
+    bottom: -6px;
+    right: 0;
+    background-color: #DB915E;
+    transition: all 0.3s ease-in-out;
+}
+.formbar ul li a:hover::before{
+    left: 0;
+    width: 100%;
+}
+
+
+@media (min-width: 320px) and (max-width: 576px){
+    .logoImg{
+        width: 140px;
+        display: block;
+    }
+    .navbar{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 100%;
+        right: 0;
+        z-index: 30;
+        background: linear-gradient(45deg,#43cea2,#185a9d);
+        transition: all 0.2s ease-in-out;
+    }
+    .active{
+        left: 0;
+    }
+
+    .menubar ul li a{
+        margin-right: 0px; 
+        margin-bottom: 25px;
+        display: block;
+        color: #FFF;
+    }
+    .formbar ul li a{
+        margin-left: 0px; 
+        margin-bottom: 25px;
+        display: block;
+        color: #FFF;
+    }
+}
