@@ -1,9 +1,51 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsGoogle } from 'react-icons/bs';
 import formImg from '../../../assets/all_image/form.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContexts } from '../../../AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const RegisterPage = () => {
+    const { user, createUser } = useContext(AuthContexts);
+    const navigate = useNavigate();
+    // console.log(user) 
+
+    const handleRegister = (event) =>{
+        event.preventDefault();
+        const Name        = event.target.name.value;
+        const Email       = event.target.email.value;
+        const Password    = event.target.password.value;
+        const Photo       = event.target.photo.value;
+        const allFormDetails = {Name, Email, Password, Photo}
+        console.log(allFormDetails)
+
+        // create user details info
+        createUser(Email, Password)
+        .then(result =>{
+            const users = result.user;
+            console.log(users)
+            updateProfiles(result.user, Name, Photo)
+            navigate("/login");
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
+
+    }
+
+    const updateProfiles = (infos, name, photo) =>{
+         updateProfile(infos, {
+            displayName: name,
+            photoURL: photo
+         })
+         .then(() =>{
+            console.log("updated");
+         })
+         .catch(error =>{
+            console.log(error.message);
+         })
+    }
+
     return (
         <div className='lg:py-20 py-10 px-5'>
         <div className='max-w-[1140px] mx-auto flex lg:flex-row flex-col justify-between items-center gap-12'>
@@ -13,12 +55,13 @@ const RegisterPage = () => {
 
             <div className='lg:w-[40%] w-full '>
                  <h2 className='text-[#202832] text-center mb-8 font-bold text-[30px]'>Register Form</h2>
-                <form action="">
+
+                <form onSubmit={ handleRegister }>
                    <div className='mb-7'>
                         <input type="text" name="name" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Name' />
                     </div>
                     <div className='mb-7'>
-                        <input type="email" name="email" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Email' />
+                        <input type="Email" name="email" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Email' />
                     </div>
                     <div className='mb-7'>
                         <input type="password" name="password" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Password' />
