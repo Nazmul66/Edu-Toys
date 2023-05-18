@@ -5,6 +5,7 @@ import Home from "../Component/Home/Home";
 import LoginPage from "../Component/Pages/LoginPage/LoginPage";
 import MainForm from "../Layout/MainForm";
 import RegisterPage from "../Component/Pages/RegisterPage/RegisterPage";
+import AddToys from "../Component/Shared/AddToys/AddToys";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
         {
            path: '/',
            element: <Home></Home>
+        },
+        {
+          path: '/AddToy',
+          element: <AddToys></AddToys>
         }
       ]
     },
