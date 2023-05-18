@@ -31,7 +31,7 @@ const LoginPage = () => {
 
                         <button className='block w-full font-semibold text-white py-3 bg-[#4686ff] rounded-md'>Login</button>
 
-                        <div className="flex flex-col w-full border-opacity-50 my-7">
+                        <div className="flex flex-col w-full border-opacity-50 my-2">
                             <div className="divider text-[#e1e0e0]">OR</div>
                         </div>
                         <div className='bg-[#f64236] flex items-center justify-center rounded-md mb-6'>
