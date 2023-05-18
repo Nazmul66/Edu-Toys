@@ -14,23 +14,23 @@ const About_section = () => {
                 <div className='flex flex-col gap-5 lg:flex-row justify-between'>
                     <div className='about-content lg:w-1/4 w-full lg:p-5 p-0 lg:mb-0 mb-8'>
                         <img src={Content1} alt="" className='block mx-auto' />
-                        <h6>Import the full demo with 1 click</h6>
-                        <p>You can get the entire PlayGrow theme demo with just a single click of your mouse.</p>
+                        <h6>Toy car</h6>
+                        <p>You can get those car for your children because they will loved for toy cars.</p>
                     </div>
                     <div className='about-content lg:w-1/4 w-full lg:p-5 p-0 lg:mb-0 mb-8'>
                         <img src={Content2} alt="" className='mt-[-28px] block mx-auto' />
-                        <h6>Easy drag-and-drop content editing</h6>
-                        <p>PlayGrow is fully compatible with the user-friendly Elementor Page Builder plugin.</p>
+                        <h6>Berbie Dolls</h6>
+                        <p>Girls really love those berbie girl's doll to play several hours to their friends.</p>
                     </div>
                     <div className='about-content lg:w-1/4 w-full lg:p-5 p-0 lg:mb-0 mb-8'>
                         <img src={Content3} alt="" className='mt-[-10px] block mx-auto' />
-                        <h6>Costumize anything with total ease</h6>
-                        <p>Adjust any of the colors, choose from over IK Google Fonts available & lots more.</p>
+                        <h6>Lego City</h6>
+                        <p>Every single children will also love to play lego city toyand most of the they play hours and hours.</p>
                     </div>
                     <div className='about-content lg:w-1/4 w-full lg:p-5 p-0'>
                         <img src={Content4} alt="" className='block mx-auto' />
-                        <h6>Fully responsive and retina-ready</h6>
-                        <p>Your new website is sure to look absolutely stunning on all device types and screens.</p>
+                        <h6>Marbel's Toys</h6>
+                        <p>Those are the coolest action figure toy that every single children's will buy those and play most likely.</p>
                     </div>
                 </div>
             </div>

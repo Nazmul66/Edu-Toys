@@ -1,0 +1,11 @@
+.offer-section{
+    background: url("../../../assets/all_image/offer.png") no-repeat center top;
+    background-size: cover;
+    padding: 75px 0;
+}
+
+@media (min-width: 320px) and (max-width: 576px){
+    .offer-section{
+        padding: 75px 20px;
+    }
+}

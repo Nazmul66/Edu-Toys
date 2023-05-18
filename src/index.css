@@ -19,7 +19,7 @@ a{
 h1,h3,h5{
     font-family: 'Inter', sans-serif;
 }
-h2,h4{
+h2,h4,span{
     font-family: 'Nunito', sans-serif;
 }
 h6{
