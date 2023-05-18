@@ -1,0 +1,16 @@
+
+.about-content h6{
+    font-family: 'Jost', sans-serif;
+    margin-top: 26px;
+    font-weight: 400;
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.33333;
+}
+.about-content p{
+    font-family: 'Jost', sans-serif;
+    margin-top: 11px;
+    text-align: center;
+    color: #6e6e6e;
+}
