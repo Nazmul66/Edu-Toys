@@ -19,6 +19,9 @@ a{
     color: white;
     background-color: #DB915E;
 }
+::placeholder{
+    color: #a3a2a4;
+}
 h1,h3,h5{
     font-family: 'Inter', sans-serif;
 }
