@@ -1,0 +1,42 @@
+.banner-title{
+   perspective: 1000px;
+}
+.banner-title .main{
+    position: relative;
+    width: 380px;
+    transform: rotateZ(-8.72deg) rotateY(30deg) rotateX(17deg);
+}
+.main .titles{
+    font-size: 64px;
+    text-align: center;
+    color: #FF1276; 
+    font-weight: 700;
+    border: 2px dashed #FF1276;
+    border-radius: 12px;
+}
+.banner-title p{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 180px;
+    color: #959595;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 320px) and (max-width: 576px){
+    .banner-title .main{
+        position: relative;
+        width: 100%;
+        transform: rotateZ(0deg) rotateY(0deg) rotateX(0deg);
+    }
+    .main .titles{
+        font-size: 40px;
+        border: 2px dashed #FF1276;
+    }
+    .banner-title p{
+        margin-top: 16px;
+        text-align: center;
+        padding-right: 0;
+    }
+}
