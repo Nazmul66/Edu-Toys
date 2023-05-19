@@ -2,7 +2,7 @@ import React from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const MyToyRow = ({ data, index }) => {
+const MyToyRow = ({ data, index, handleDelete }) => {
     const {_id, ProductName, Photo, Email, Price, Category, seller_Name, Quantity, Describe} = data;
     console.log(data)
 
@@ -26,7 +26,7 @@ const MyToyRow = ({ data, index }) => {
                     </div>
                 </td>
                 <td>
-                    <Link to={`/deleteToy/${_id}`} className='bg-red-900 text-white text-center font-semibold text-[14px] px-4 py-3 inline-block rounded-md'><FaTrash className='mx-auto' /></Link>
+                    <button onClick={() => handleDelete(_id) } className='bg-red-900 text-white text-center font-semibold text-[14px] px-4 py-3 inline-block rounded-md'><FaTrash className='mx-auto' /></button>
                 </td>
             </tr>
         </tbody>
