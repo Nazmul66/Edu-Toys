@@ -8,6 +8,8 @@ import RegisterPage from "../Component/Pages/RegisterPage/RegisterPage";
 import AddToys from "../Component/Shared/AddToys/AddToys";
 import MyToy from "../Component/Shared/MyToy/MyToy";
 import AllToys from "../Component/Shared/AllToys/AllToys";
+import DeleteToy from "../Component/Shared/DeleteToy/DeleteToy";
+import UpdateToy from "../Component/Shared/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +32,11 @@ const router = createBrowserRouter([
         {
           path:'/MyToys',
           element: <MyToy></MyToy>
+        },
+        {
+          path:'/updateToy/:id',
+          element: <UpdateToy></UpdateToy>,
+          loader: ({ params }) => fetch(`http://localhost:3000/allToy/${params.id}`)
         }
       ]
     },

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './AllToys.css'
 import AllToyRow from '../../Pages/AllToyRow/AllToyRow';
 
 const AllToys = () => {
@@ -11,7 +12,7 @@ const AllToys = () => {
     },[])
 
     return (
-        <div className='py-20'>
+        <div className='py-20 allToy'>
             <div className='max-w-[1140px] mx-auto'>
                <div className='bg-[#f9f2fac4] rounded-lg text-[36px] text-center py-7 mb-12 font-bold text-[#353A3c]'>
                     <h2>All Toy Data of All Users</h2>
@@ -23,9 +24,9 @@ const AllToys = () => {
                         <thead>
                             <tr>
                                 <th>Sl.</th>
-                                <th>Name</th>
-                                <th>Toy Name</th>
-                                <th>Sub-Category</th>
+                                <th>Seller_Name</th>
+                                <th>Toy_Name</th>
+                                <th>Sub_Category</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Options</th>
