@@ -3,7 +3,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const MyToyRow = ({ data, index, handleDelete }) => {
-    const {_id, ProductName, Photo, Email, Price, Category, seller_Name, Quantity, Describe} = data;
+    const {_id, ProductName, Photo, Price, Category, seller_Name, Quantity, Describe} = data;
     console.log(data)
 
     return (
@@ -26,7 +26,7 @@ const MyToyRow = ({ data, index, handleDelete }) => {
                     </div>
                 </td>
                 <td>
-                    <button onClick={() => handleDelete(_id) } className='bg-red-900 text-white text-center font-semibold text-[14px] px-4 py-3 inline-block rounded-md'><FaTrash className='mx-auto' /></button>
+                    <button onClick={() => handleDelete(_id) } className='bg-red-900 text-white text-center font-semibold text-[12px] px-4 py-3 inline-block rounded-md'><FaTrash className='mx-auto' /></button>
                 </td>
             </tr>
         </tbody>

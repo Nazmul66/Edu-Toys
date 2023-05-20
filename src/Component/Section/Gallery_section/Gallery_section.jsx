@@ -6,7 +6,7 @@ import gallery_3 from '../../../assets/photo_gallery/gallary-3.png';
 import gallery_4 from '../../../assets/photo_gallery/gallary-4.png';
 import gallery_5 from '../../../assets/photo_gallery/gallary-5.jpg';
 import gallery_6 from '../../../assets/photo_gallery/gallary-6.jpg';
-import gallery_7 from '../../../assets/photo_gallery/gallary-7.jpg';
+import gallery_7 from '../../../assets/photo_gallery/gallary-7.jpeg';
 import gallery_8 from '../../../assets/photo_gallery/gallary-8.jpg';
 
 const Gallery_section = () => {

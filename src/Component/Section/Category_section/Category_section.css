@@ -1,0 +1,8 @@
+.active{
+    background: linear-gradient(0deg, #3b60f1, #24C6FF);
+    color: white;
+}
+.inActive{
+    background: linear-gradient(180deg, #3b60f1, #24C6FF);
+    color: white;
+}

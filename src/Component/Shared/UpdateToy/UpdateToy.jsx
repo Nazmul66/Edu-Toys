@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './UpdateToy.css'
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -69,15 +70,16 @@ const UpdateToy = () => {
             <div className='max-w-[1000px] mx-auto'>
                 <div className='bg-[#f9f2fac4] rounded-lg text-[36px] text-center py-7 mb-24 font-bold text-[#353A3c]'>
                     <h2>Update Toys</h2>
-                    {toy.Email}
                 </div>
 
                <form onSubmit={ handleAdd }>
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
+
                       <div className="lg:w-1/2 w-full">
                         <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Toy Name</label>
                           <input type="text" name="name" placeholder="Name" defaultValue={ProductName} className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
+
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Seller Name</label>
                           <input type="text" name="seller_name" value={user?.displayName} placeholder="Seller Name" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
@@ -85,10 +87,12 @@ const UpdateToy = () => {
                    </div>
 
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
+
                       <div className="lg:w-1/2 w-full">
                         <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Seller Email</label>
                           <input type="email" name="email" value={user?.email} placeholder="Seller Email Address" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
+
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Sub-Category</label>
                           <input type="text" name="category" defaultValue={Category} placeholder="Sub-Category" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
@@ -96,10 +100,12 @@ const UpdateToy = () => {
                    </div>
 
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
+
                       <div className="lg:w-1/2 w-full">
                         <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Price</label>
                           <input type="text" name="price" defaultValue={Price} placeholder="Price" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
+
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Rating</label>
                           <input type="number" name="rating" defaultValue={Rating} placeholder="Rating" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
@@ -107,10 +113,12 @@ const UpdateToy = () => {
                    </div>
 
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
+
                       <div className="lg:w-1/2 w-full">
                         <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Available Quantity</label>
                           <input type="text" name="quantity" defaultValue={Quantity} placeholder="Quantity" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
                       </div>
+
                       <div className="lg:w-1/2 w-full">
                           <label htmlFor="" className='text-[22px] font-semibold text-[#353A3c] mb-2 block'>Picture URL</label>
                           <input type="text" name="photo" defaultValue={Photo} placeholder="Picture URL" className="outline-none border-[2px] border-[#D1D1D1] text-[#353A3c] font-medium px-5 py-3 w-full rounded-lg" />
@@ -129,7 +137,5 @@ const UpdateToy = () => {
         </div>
     );
 };
-import './UpdateToy.css'
-import { useLoaderData, useNavigate } from 'react-router-dom';
 
 export default UpdateToy;
