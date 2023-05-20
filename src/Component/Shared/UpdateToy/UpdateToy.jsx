@@ -72,7 +72,7 @@ const UpdateToy = () => {
                     <h2>Update Toys</h2>
                 </div>
 
-               <form onSubmit={ handleAdd }>
+               <form onSubmit={ handleAdd } data-aos="zoom-out" data-aos-duration="1500">
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
 
                       <div className="lg:w-1/2 w-full">

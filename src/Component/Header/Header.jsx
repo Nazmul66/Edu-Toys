@@ -24,11 +24,12 @@ const Header = () => {
         <header className='py-5 lg:px-0 px-5'>
             <div className='max-w-[1140px] mx-auto '>
                 <div className='flex justify-between items-center'>
-                    <div className='lg:w-[25%] w-[50%]'>
+                    <div className='lg:w-[25%] w-[50%]' data-aos="fade-right" data-aos-duration="2000">
                         <img src={logo} alt="" className='logoImg' />
                     </div>
                     
-                    <nav className={`w-[75%] flex lg:flex-row flex-col lg:justify-between justify-center items-center ${toggle ? "navbar active" : "navbar" }`}>
+                    <nav className={`w-[75%] flex lg:flex-row flex-col lg:justify-between justify-center items-center ${toggle ? "navbar active" : "navbar" }`} data-aos="zoom-in"
+                    data-aos-duration="2000">
                         <div className='menubar'>
                             <ul className='flex lg:flex-row flex-col items-center'>
                                 <li><Link to="/">Home</Link></li>

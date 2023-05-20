@@ -7,10 +7,10 @@ const Sub_categories = ({ sub_category }) => {
     // console.log(sub_category)
     return (
         <div className='category-card'>
-            <div className=''>
+            <div className='' data-aos="fade-down-right" data-aos-duration="1500">
                 <img src={Photo} alt="" className='w-full' />
             </div>
-            <div className=''>
+            <div className='' data-aos="fade-down-left" data-aos-duration="1500">
                <h3 className='text-[#FBA628] font-bold text-xl mb-4'>{ProductName}</h3>
                <h5 className='text-[#8988F7] font-bold text-[16px] mb-4'>Price: ${Price}</h5>
                <p className='text-[#16BCA9] font-bold text-[16px] mb-4'>Ratings: {Rating}</p>

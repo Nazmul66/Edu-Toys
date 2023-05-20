@@ -58,7 +58,7 @@ const MyToy = () => {
                     <h2>My Toys</h2>
                 </div>
 
-          <div className="overflow-x-auto w-full">
+          <div className="overflow-x-auto w-full" data-aos="zoom-in" data-aos-duration="1500">
                 <table className="table table-compact w-full">
                     {/* table head part */}
                     <thead>

@@ -14,7 +14,9 @@ const Gallery_section = () => {
         <div className='py-16 px-5'>
             <h4 className='text-[#FF1276] text-2xl font-bold text-center mb-3'>Our Gallery</h4>
               <p className='text-[36px] text-[#101828] font-bold text-center mb-10'>Kid's Playing with Toys</p>
-             <div className='grid lg:grid-cols-4 grid-cols-1 gap-7 max-w-[1140px] mx-auto'>
+             <div className='grid lg:grid-cols-4 grid-cols-1 gap-7 max-w-[1140px] mx-auto'
+             data-aos="zoom-in-down"
+             data-aos-duration="2000">
                 <div className='imgBox'>
                    <img src={gallery_1} alt="" className='images' />
                 </div>

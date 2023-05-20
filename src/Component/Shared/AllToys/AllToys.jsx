@@ -28,7 +28,7 @@ const AllToys = () => {
                     <input type="text" name="search" placeholder='Search here' className='outline-none lg:h-[50px] h-[50px] w-full lg:w-fit rounded-full lg:px-3 lg:pl-4 pl-16' />
                 </div>
 
-              <div className="overflow-x-auto w-full">
+              <div className="overflow-x-auto w-full" data-aos="zoom-in-right" data-aos-duration="1500">
                     <table className="table table-compact w-full">
                         {/* table head part */}
                         <thead>

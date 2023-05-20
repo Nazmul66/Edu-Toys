@@ -5,7 +5,8 @@ import logo from '../../assets/all_image/logo.png'
 const Footer = () => {
     return (
         <footer>
-            <div className='max-w-[1140px] mx-auto flex lg:flex-row flex-col justify-between'>
+            <div className='max-w-[1140px] mx-auto flex lg:flex-row flex-col justify-between' data-aos="zoom-out-left"
+            data-aos-duration="1500">
                 <div className='lg:w-[46%] w-full'>
                    <img src={logo} alt="" className='w-[200px] lg:inline block mx-auto lg:mb-0 mb-10' />
                 </div>

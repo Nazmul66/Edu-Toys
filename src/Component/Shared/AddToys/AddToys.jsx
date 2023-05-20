@@ -52,7 +52,7 @@ const AddToys = () => {
     
     return (
         <div className='py-20 px-5 addtoy'>
-            <div className='max-w-[1000px] mx-auto'>
+            <div className='max-w-[1000px] mx-auto' data-aos="zoom-in-left" data-aos-duration="1500">
                 <div className='bg-[#f9f2fac4] rounded-lg text-[36px] text-center py-7 mb-24 font-bold text-[#353A3c]'>
                     <h2>Online Add Toy</h2>
                 </div>

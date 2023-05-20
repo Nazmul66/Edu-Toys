@@ -8,7 +8,9 @@ const Banner_section = () => {
     return (
         <div className='lg:py-20 py-10 px-5'>
             <div className='max-w-[1140px] mx-auto flex lg:flex-row flex-col justify-between items-center relative'>
-                 <div className='lg:w-1/2 w-full banner-title'>
+                 <div className='lg:w-1/2 w-full banner-title'
+                 data-aos="fade-right" 
+                 data-aos-duration="2000" >
                     <div className='main lg:mx-0 mx-auto'>
                         <h2 className='titles'>Fun to care,</h2>
                         <img src={toy1} alt="" className='absolute top-[-40px] right-[-40px] lg:block hidden' />
@@ -20,7 +22,9 @@ const Banner_section = () => {
                           <button className='text-white font-medium text-[14px] bg-[#FF1276] px-[20px] py-[10px] rounded-lg'>VISIT NOW</button>
                        </div>
                  </div>
-                 <div className='lg:w-[60%] w-full lg:absolute static right-0 lg:mt-0 mt-20'>
+                 <div className='lg:w-[60%] w-full lg:absolute static right-0 lg:mt-0 mt-20' data-aos="zoom-in-up"
+                 data-aos-duration="2000"
+                 data-aos-offset="300" >
                     <img src={banner} alt="" className='w-full' />
                  </div>
             </div>
