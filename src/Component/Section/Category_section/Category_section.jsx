@@ -10,7 +10,7 @@ const Category_section = () => {
         fetch(`http://localhost:3000/category/${activeTabs}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             setToggle(data)
         })
     },[activeTabs])

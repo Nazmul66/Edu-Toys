@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { BsGoogle } from 'react-icons/bs';
 import formImg from '../../../assets/all_image/form.jpg'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
 
 const LoginPage = () => {
+    const location = useLocation();
+    // console.log(location)
     const {signInUser, googleInUser} = useContext(AuthContexts);
     const navigate = useNavigate();
     const [errors, setErrors] = useState("");
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (event) =>{
         event.preventDefault();
@@ -20,7 +24,7 @@ const LoginPage = () => {
         .then(result =>{
             const users = result.user;
             console.log("login successful",users)
-            navigate('/');
+            navigate(from, { replace : true });
         })
         .catch(error =>{
             setErrors(error.message)
@@ -32,7 +36,7 @@ const LoginPage = () => {
         .then(result =>{
             const users = result.user;
             console.log(users)
-            navigate('/');
+            navigate(from, { replace : true });
         })
         .then(error =>{
             setErrors(error.message)

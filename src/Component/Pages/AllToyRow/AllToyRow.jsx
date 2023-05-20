@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllToyRow = ({ data, index }) => {    
       const {_id, ProductName, Price, Category, seller_Name, Quantity} = data;
@@ -15,7 +16,7 @@ const AllToyRow = ({ data, index }) => {
                 <td>{Price}</td>
                 <td>{Quantity}</td>
                 <td>
-                    <button className='bg-[#FF1276] text-white font-semibold text-[14px] px-5 py-2 rounded-md'>View Details</button>
+                    <Link to={`/viewDetails/${_id}`} className='bg-[#FF1276] text-white font-semibold text-[14px] px-5 py-2 rounded-md'>View Details</Link>
                 </td>
             </tr>
         </tbody>
