@@ -7,7 +7,7 @@ const Category_section = () => {
     const [toggle, setToggle] = useState([]);
 
     useEffect(() =>{
-        fetch(`https://edu-toys-server-beige.vercel.app/category/${activeTabs}`)
+        fetch(`https://edu-toys-server-nine.vercel.app/category/${activeTabs}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data)

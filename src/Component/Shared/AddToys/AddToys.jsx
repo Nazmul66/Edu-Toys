@@ -29,7 +29,7 @@ const AddToys = () => {
         event.target.reset();
 
         // backend Post data
-        fetch("https://edu-toys-server-beige.vercel.app/Toy",{
+        fetch("https://edu-toys-server-nine.vercel.app/Toy",{
             method: "POST",
             headers: {
                 "content-type": "application/json"

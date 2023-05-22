@@ -12,14 +12,14 @@ const AllToys = () => {
     // console.log(search)
 
     useEffect(() =>{
-        fetch(`https://edu-toys-server-beige.vercel.app/allToy?limit=${perPage}`)
+        fetch(`https://edu-toys-server-nine.vercel.app/allToy?limit=${perPage}`)
         .then(res => res.json())
         .then(data => setGetData(data))
     },[perPage])
 
     // searchText
     const handleSearch = () =>{
-        fetch(`https://edu-toys-server-beige.vercel.app/searchText/${search}`)
+        fetch(`https://edu-toys-server-nine.vercel.app/searchText/${search}`)
         .then(res => res.json())
         .then(data => setGetData(data))
     }

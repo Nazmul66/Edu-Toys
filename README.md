@@ -35,7 +35,7 @@ __this website are using many different NPM package that the website was created
 + Documentation Link ---> [react-dotenv](https://www.npmjs.com/package/dotenv)
 
 ## Live Link --->
-+ Hosted by Firebase --> [Edu-Toys]()
++ Hosted by Firebase --> [Edu-Toys](edu-toy-256df.firebaseapp.com)
 
 ## starter template -->
 + Github Repository ---> [Edu-Toys-starter](https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-client-side-Nazmul66)
