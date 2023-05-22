@@ -11,14 +11,14 @@ const Offer_section = () => {
             <div className='max-w-[1140px] mx-auto'>
                <h4 className='text-[#FF1276] text-2xl font-bold text-center mb-20'>Our Offer</h4>
                <div className='flex lg:flex-row flex-col justify-between gap-20'>
-                   <div className='lg:w-1/2 w-full' data-aos="zoom-in-right"
+                   <div className='lg:w-1/2 w-full' data-aos="zoom-in-up"
                    data-aos-easing="ease-out-cubic"
                    data-aos-duration="2000" >
                       <img src={teddy} alt="" className='w-full' />
                    </div>
                    <div className='lg:w-1/2 w-full'>
                        <div className='flex items-center border-dashed border-2 border-[#FBA628] bg-[#FFF8EF] px-9 py-8 mb-[35px] rounded-lg' 
-                            data-aos="fade-left"
+                            data-aos="fade-up"
                             data-aos-duration="2000">
                            <img src={vector1} alt="" className='mr-3' />
                              <div className=''>
@@ -27,7 +27,7 @@ const Offer_section = () => {
                              </div>
                        </div>
                        <div className='flex items-center border-dashed border-2 border-[#8988F7] bg-[#F6F7FF] px-9 py-8 mb-[35px] rounded-lg' 
-                       data-aos="fade-left"
+                       data-aos="fade-down"
                        data-aos-duration="2000">
                            <img src={vector2} alt="" className='mr-3' />
                              <div className=''>
@@ -36,7 +36,7 @@ const Offer_section = () => {
                              </div>
                        </div>
                        <div className='flex items-center border-dashed border-2 border-[#16BCA9] bg-[#F6FEFE] px-9 py-8 mb-[35px] rounded-lg' 
-                       data-aos="fade-left"
+                       data-aos="fade-up"
                        data-aos-duration="2000">
                            <img src={vector3} alt="" className='mr-3' />
                              <div className=''>

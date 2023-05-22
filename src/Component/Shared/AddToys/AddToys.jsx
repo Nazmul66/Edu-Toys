@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import './AddToys.css'
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import titleChange from '../../../TitleChange/TitleChange';
 
 const AddToys = () => {
     const { user } = useContext(AuthContexts);
+    titleChange("AddToys");
 
     const handleAdd = (event) =>{
         event.preventDefault();
@@ -27,7 +29,7 @@ const AddToys = () => {
         event.target.reset();
 
         // backend Post data
-        fetch("http://localhost:3000/Toy",{
+        fetch("https://edu-toys-server-beige.vercel.app/Toy",{
             method: "POST",
             headers: {
                 "content-type": "application/json"

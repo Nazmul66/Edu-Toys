@@ -3,8 +3,10 @@ import './UpdateToy.css'
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import titleChange from '../../../TitleChange/TitleChange';
 
 const UpdateToy = () => {
+    titleChange("UpdateToys");
     const { user } = useContext(AuthContexts);
     const navigate = useNavigate();
     const toy = useLoaderData();
@@ -41,7 +43,7 @@ const UpdateToy = () => {
         console.log(allData)
 
         // backend PUT data
-        fetch(`http://localhost:3000/update/${_id}`,{
+        fetch(`https://edu-toys-server-beige.vercel.app/update/${_id}`,{
             method: "PUT",
             headers:{
                 "content-type": "application/json"

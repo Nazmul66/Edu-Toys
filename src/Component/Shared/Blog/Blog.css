@@ -1,0 +1,36 @@
+.blog{
+    padding: 85px 0 5px;
+    background: url("../../../assets/all_image/product-bg.png") no-repeat center top;
+    background-size: cover;
+}
+.main-container{
+    max-width: 650px;
+    margin: auto;
+}
+.card-content{
+    padding: 20px;
+    /* background: linear-gradient(180deg, #ff5f6d, #ffc371); */
+    background-color: #4E8397;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+ .card-content h1{
+    border-bottom: 1px solid #B0A8B9;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    font-weight: 700;
+    color: #FFF;
+}
+ .card-content p{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+
+@media (min-width: 320px) and (max-width: 576px){
+    .blog{
+        padding: 140px 25px 0;
+        background-color: #FFF9EA;
+    } 
+}

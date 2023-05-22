@@ -9,7 +9,7 @@ const Banner_section = () => {
         <div className='lg:py-20 py-10 px-5'>
             <div className='max-w-[1140px] mx-auto flex lg:flex-row flex-col justify-between items-center relative'>
                  <div className='lg:w-1/2 w-full banner-title'
-                 data-aos="fade-right" 
+                 data-aos="fade-up" 
                  data-aos-duration="2000" >
                     <div className='main lg:mx-0 mx-auto'>
                         <h2 className='titles'>Fun to care,</h2>

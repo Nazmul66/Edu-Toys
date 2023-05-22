@@ -4,8 +4,10 @@ import formImg from '../../../assets/all_image/form.jpg'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import titleChange from '../../../TitleChange/TitleChange';
 
 const RegisterPage = () => {
+    titleChange("Register");
     const { user, createUser } = useContext(AuthContexts);
     const navigate = useNavigate();
     const [errors, setErrors] = useState("");
@@ -29,11 +31,11 @@ const RegisterPage = () => {
          else if(!/(?=.*?[A-Z])/.test(Password)){
              return setErrors("!!! AtLeast use One UpperCase !!!");
          }
-         else if(!/(?=.*[0-9])/.test(Password)){
-            return setErrors("!!! AtLeast use One Number !!!");
-        }
          else if(!/(?=[^#?!@$%^&*\n-])/.test(Password)){
             return setErrors("!!! AtLeast use One Special Character !!!");
+        }
+         else if(!/(?=.*[0-9])/.test(Password)){
+            return setErrors("!!! AtLeast use One Number !!!");
         }
 
         // create user details info

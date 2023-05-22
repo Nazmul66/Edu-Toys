@@ -7,7 +7,7 @@ const Category_section = () => {
     const [toggle, setToggle] = useState([]);
 
     useEffect(() =>{
-        fetch(`http://localhost:3000/category/${activeTabs}`)
+        fetch(`https://edu-toys-server-beige.vercel.app/category/${activeTabs}`)
         .then(res => res.json())
         .then(data => {
             // console.log(data)
@@ -24,7 +24,7 @@ const Category_section = () => {
               <h4 className='text-[#FF1276] text-2xl font-bold text-center mb-3'>Our Category</h4>
               <p className='text-[36px] text-[#101828] font-bold text-center mb-10'>Shop By Category</p>
 
-              <div className='mb-20'>
+              <div className='mb-20 mx-5'>
                    <ul className='flex justify-center'>
                         <li onClick={() => tabToggle("science")} className={`${activeTabs == "science" ? "active" : "inActive"} px-8 py-3 font-medium cursor-pointer`}>Science Kits</li>
 

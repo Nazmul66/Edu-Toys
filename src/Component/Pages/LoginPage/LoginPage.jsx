@@ -3,8 +3,10 @@ import { BsGoogle } from 'react-icons/bs';
 import formImg from '../../../assets/all_image/form.jpg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
+import titleChange from '../../../TitleChange/TitleChange';
 
 const LoginPage = () => {
+    titleChange("Login");
     const location = useLocation();
     // console.log(location)
     const {signInUser, googleInUser} = useContext(AuthContexts);
@@ -19,6 +21,10 @@ const LoginPage = () => {
         const Password    = event.target.password.value;
         const allFormDetails = { Email, Password }
         console.log(allFormDetails)
+
+        if(Email === "" || Password === ""){
+            return setErrors("!!Please fill up all your form!!");
+        }
 
         signInUser(Email, Password)
         .then(result =>{
@@ -55,10 +61,10 @@ const LoginPage = () => {
 
                     <form  onSubmit={ handleLogin }>
                         <div className='mb-7'>
-                            <input type="email" name="email" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' required placeholder='Email' />
+                            <input type="email" name="email" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Email' />
                         </div>
                         <div className='mb-7'>
-                            <input type="password" name="password" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' required placeholder='Password' />
+                            <input type="password" name="password" className='outline-none px-5 py-3 rounded-md bg-[#EEE] w-full' placeholder='Password' />
                         </div>
 
                         <div className='flex justify-between mb-10'>
@@ -69,7 +75,7 @@ const LoginPage = () => {
                             <span className='block text-[#5b8fd9] font-medium'>Forget Password?</span>
                         </div>
 
-                        <p className='text-[15px] text-red-600 font-bold text-center mb-4'>{errors}</p>
+                        <p className='text-[15px] text-red-600 font-bold text-center mb-3'>{errors}</p>
 
                         <button className='block w-full font-semibold text-white py-3 bg-[#4686ff] rounded-md'>Login</button>
                     </form>

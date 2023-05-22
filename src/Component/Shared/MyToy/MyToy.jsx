@@ -3,11 +3,13 @@ import './MyToy.css'
 import { AuthContexts } from '../../../AuthProvider/AuthProvider';
 import MyToyRow from '../../Pages/MyToyRow/MyToyRow';
 import Swal from 'sweetalert2';
+import titleChange from '../../../TitleChange/TitleChange';
 
 const MyToy = () => {
+       titleChange("MyToys");
        const { user } = useContext(AuthContexts);
        const [emailData, setEmailData] = useState([])
-       const url = `http://localhost:3000/myToy?email=${user?.email}`;
+       const url = `https://edu-toys-server-beige.vercel.app/myToy?email=${user?.email}`;
 
        useEffect(() =>{
           fetch(url)
@@ -29,7 +31,7 @@ const MyToy = () => {
             if (result.isConfirmed) {
 
             // Users Toy will be DELETE
-            fetch(`http://localhost:3000/delete/${id}`,{
+            fetch(`https://edu-toys-server-beige.vercel.app/delete/${id}`,{
                     method: "DELETE"
                 })
                 .then(res => res.json())
