@@ -7,7 +7,7 @@ import titleChange from '../../../TitleChange/TitleChange';
 
 const MyToy = () => {
        titleChange("MyToys");
-       const { user } = useContext(AuthContexts);
+       const { user, myRefetch } = useContext(AuthContexts);
        const [emailData, setEmailData] = useState([])
        const url = `https://edu-toys-server-nine.vercel.app/myToy?email=${user?.email}`;
 
@@ -36,8 +36,10 @@ const MyToy = () => {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
-    
+                    console.log(data);
+
+                    // refetching
+                    myRefetch();
                     if(data.deletedCount > 0){
                       Swal.fire(
                         'Deleted!',

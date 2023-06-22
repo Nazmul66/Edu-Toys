@@ -8,7 +8,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
     const [loading, setLoading] = useState(true);
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
 
     // create user in firebase
     const createUser = (email, password) =>{
@@ -51,7 +51,10 @@ const AuthProvider = ({ children }) => {
         signInUser,
         signOutUser,
         googleInUser,
-        loading
+        loading,
+        change,
+        myRefetch,
+        setLoading
     }
 
     return (

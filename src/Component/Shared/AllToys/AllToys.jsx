@@ -7,7 +7,7 @@ import titleChange from '../../../TitleChange/TitleChange';
 const AllToys = () => {
     titleChange("AllToys");
     const [search, setSearch] = useState("");
-    const [gerData, setGetData] = useState([]);
+    const [getData, setGetData] = useState([]);
     const perPage = 20;
     // console.log(search)
 
@@ -29,6 +29,7 @@ const AllToys = () => {
             <div className='max-w-[1140px] mx-auto'>
                <div className='bg-[#f9f2fac4] rounded-lg text-[36px] text-center py-7 mb-12 font-bold text-[#353A3c]'>
                     <h2>All Toy Data of All Users</h2>
+                    {getData.length}
                 </div>
 
                 <div className='max-w-[650px] mx-auto rounded-full bg-[#FF1276] flex items-center justify-between lg:p-4 p-2 mb-16 lg:static relative'>
@@ -56,7 +57,7 @@ const AllToys = () => {
 
                       {/* table body's part */}
                     {
-                        gerData.map((data, index) => <AllToyRow 
+                        getData.map((data, index) => <AllToyRow 
                                   key={data._id} 
                                   index={index}
                                   data={data}

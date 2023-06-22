@@ -13,7 +13,7 @@ const UpdateToy = () => {
     const {_id, ProductName, Price, Category, Rating, Quantity, Describe, Photo} = toy;
     console.log(toy)
 
-    const handleAdd = (event) =>{
+    const handleUpdate = (event) =>{
         event.preventDefault();
         const form         = event.target;
         const ProductName  = form.name.value;
@@ -43,7 +43,7 @@ const UpdateToy = () => {
         console.log(allData)
 
         // backend PUT data
-        fetch(`https://edu-toys-server-beige.vercel.app/update/${_id}`,{
+        fetch(`https://edu-toys-server-nine.vercel.app/update/${_id}`,{
             method: "PUT",
             headers:{
                 "content-type": "application/json"
@@ -74,7 +74,7 @@ const UpdateToy = () => {
                     <h2>Update Toys</h2>
                 </div>
 
-               <form onSubmit={ handleAdd } data-aos="zoom-out" data-aos-duration="1500">
+               <form onSubmit={ handleUpdate } data-aos="zoom-out" data-aos-duration="1500">
                    <div className='flex lg:flex-row flex-col justify-between items-center gap-10 mb-8'>
 
                       <div className="lg:w-1/2 w-full">

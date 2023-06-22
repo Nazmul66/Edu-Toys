@@ -7,7 +7,7 @@ import { RxCross2 } from 'react-icons/rx';
 import { AuthContexts } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
-    const {user, signOutUser} = useContext(AuthContexts);
+    const { user, signOutUser, setLoading } = useContext(AuthContexts);
     const [toggle, setToggle] = useState(false);
 
     const handleLogOut = () =>{
@@ -49,7 +49,9 @@ const Header = () => {
                                     {user ? 
                                        <>
                                           <li>
-                                              <img src={user?.photoURL} title={user?.displayName} alt="" className='w-[50px] rounded-full cursor-pointer' />
+                                              <div className='relative'>
+                                                 <img src={user?.photoURL} title={user?.displayName} alt="" className='w-[50px] rounded-full cursor-pointer' />
+                                              </div>
                                           </li>
                                           <li><Link onClick={ handleLogOut }>Log Out</Link></li> 
                                        </>

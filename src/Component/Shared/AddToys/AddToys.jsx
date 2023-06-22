@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import titleChange from '../../../TitleChange/TitleChange';
 
 const AddToys = () => {
-    const { user } = useContext(AuthContexts);
+    const { user, myRefetch } = useContext(AuthContexts);
     titleChange("AddToys");
 
     const handleAdd = (event) =>{
@@ -39,6 +39,8 @@ const AddToys = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            myRefetch();
+
             if(data.insertedId){
                 Swal.fire({
                     position: 'center-center',
